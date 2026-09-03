@@ -1,0 +1,10 @@
+name: Knecht
+type: theme
+description: 'Minimal front-end theme for the Knecht test-drupal11 e2e fixture, built with the Knecht Styleguide Kit.'
+package: Custom
+core_version_requirement: ^11
+base theme: false
+libraries:
+  - knecht/kit
+regions:
+  content: Content

@@ -1,0 +1,43 @@
+{#
+/**
+ * @file
+ * Front page of the Knecht test-drupal11 fixture, built with the Knecht Styleguide Kit.
+ *
+ * Available variables (see knecht.theme):
+ * - knecht_now: current server time (H:i:s).
+ * - knecht_env: label => value pairs with environment info.
+ */
+#}
+<main class="kit-container kit-stack" id="main-content">
+
+  <span class="kit-badge kit-mb-4">drupal11-test-e2e</span>
+
+  <h1>Drupal 11 Fixture <span class="kit-accent-text">Knecht.works</span></h1>
+
+  <p class="kit-muted">
+    A small demo page, built with the Knecht Styleguide Kit. Served from
+    <code class="kit-code">{{ knecht_env['Host'] }}</code> at {{ knecht_now }}.
+  </p>
+
+  <div class="kit-stack">
+    <a class="kit-button kit-button--solid" href="https://knecht.works">Go to knecht.works</a>
+    <button class="kit-button" data-kit-toast="Up and running! 🚀">Show toast</button>
+    <a class="kit-button kit-button--ghost" href="https://github.com/knecht-works/test-drupal11">Go to Repo</a>
+  </div>
+
+  <section class="kit-card kit-stack kit-mt-8">
+    <dl class="kit-dl">
+      {% for label, value in knecht_env %}
+      <div class="kit-dl-row">
+        <dt>{{ label }}</dt>
+        <dd>{{ value }}</dd>
+      </div>
+      {% endfor %}
+    </dl>
+  </section>
+
+  <p class="kit-muted">
+    <a href="{{ path('user.login') }}">admin login</a>
+  </p>
+
+</main>

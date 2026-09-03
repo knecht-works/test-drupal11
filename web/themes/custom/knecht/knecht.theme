@@ -1,0 +1,52 @@
+<?php
+
+/**
+ * @file
+ * Preprocess and alter hooks for the Knecht test-drupal11 fixture theme.
+ */
+
+/**
+ * Implements hook_preprocess_HOOK() for html templates.
+ */
+function knecht_preprocess_html(array &$variables): void {
+  if (\Drupal::service('path.matcher')->isFrontPage()) {
+    $variables['head_title'] = ['title' => 'Drupal 11 Test', 'name' => 'Knecht'];
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for page templates.
+ *
+ * Exposes environment info to page--front.html.twig, mirroring the demo page
+ * of the knecht-works/test-php fixture.
+ */
+function knecht_preprocess_page(array &$variables): void {
+  $request = \Drupal::request();
+
+  $variables['knecht_now'] = date('H:i:s');
+  $variables['knecht_env'] = [
+    'Host' => $request->getHttpHost(),
+    'PHP version' => PHP_VERSION,
+    'Drupal version' => \Drupal::VERSION,
+    'Server software' => $request->server->get('SERVER_SOFTWARE', '—'),
+    'Scheme' => $request->getScheme(),
+    'Request URI' => $request->getRequestUri(),
+    'Client IP' => $request->getClientIp() ?? '—',
+    'Timezone' => date_default_timezone_get(),
+    'Server time' => date('Y-m-d H:i:s'),
+  ];
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ *
+ * Drops core's default /core/misc/favicon.ico link; the Knecht favicons are
+ * added in html.html.twig instead.
+ */
+function knecht_page_attachments_alter(array &$attachments): void {
+  foreach ($attachments['#attached']['html_head_link'] ?? [] as $key => $link) {
+    if (($link[0]['rel'] ?? '') === 'icon' && str_contains($link[0]['href'] ?? '', 'favicon.ico')) {
+      unset($attachments['#attached']['html_head_link'][$key]);
+    }
+  }
+}

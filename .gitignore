@@ -1,0 +1,51 @@
+# Composer-managed code (restored by `ddev composer install`)
+/vendor
+/web/core
+/web/libraries
+/web/modules/contrib
+/web/profiles/contrib
+/web/themes/contrib
+/drush/Commands/contrib
+
+# Files written by drupal/core-composer-scaffold on `composer install`
+/web/autoload_runtime.php
+/web/.csslintrc
+/web/.eslintignore
+/web/.eslintrc.json
+/web/.ht.router.php
+/web/.htaccess
+/web/INSTALL.txt
+/web/README.md
+/web/example.gitignore
+/web/autoload.php
+/web/index.php
+/web/robots.txt
+/web/update.php
+/web/web.config
+/web/modules/README.txt
+/web/profiles/README.txt
+/web/themes/README.txt
+/web/sites/README.txt
+/web/sites/development.services.yml
+/web/sites/example.settings.local.php
+/web/sites/example.sites.php
+/web/sites/*/default.services.yml
+/web/sites/*/default.settings.php
+
+# Site-specific / generated at runtime
+/config/sync/.htaccess
+/web/sites/*/files/*
+!/web/sites/*/files/.gitkeep
+/web/sites/*/private
+/web/sites/*/settings.local.php
+/web/sites/*/settings.ddev.php
+/web/sites/*/services.yml
+/web/sites/simpletest
+
+# Node
+/node_modules
+
+# OS / IDE
+.DS_Store
+/.idea
+/.vscode

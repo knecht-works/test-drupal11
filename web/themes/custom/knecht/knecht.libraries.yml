@@ -1,0 +1,7 @@
+kit:
+  version: 1.x
+  css:
+    theme:
+      https://knecht.works/styleguide/kit.css: { type: external, minified: true }
+  js:
+    https://knecht.works/styleguide/kit.js: { type: external, minified: true, attributes: { defer: true } }

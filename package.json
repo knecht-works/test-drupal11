@@ -1,0 +1,7 @@
+{
+    "name": "test-drupal11",
+    "private": true,
+    "scripts": {
+        "build": "echo build ok"
+    }
+}

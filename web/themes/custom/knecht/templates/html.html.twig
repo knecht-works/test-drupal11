@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * HTML wrapper for the Knecht fixture theme (based on core's html.html.twig).
+ */
+#}
+<!DOCTYPE html>
+<html{{ html_attributes }}>
+  <head>
+    <head-placeholder token="{{ placeholder_token }}">
+    <title>{{ head_title|safe_join(' | ') }}</title>
+    <link rel="icon" type="image/png" href="https://knecht.works/styleguide/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="https://knecht.works/styleguide/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="https://knecht.works/styleguide/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://knecht.works/styleguide/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Knecht" />
+    <link rel="manifest" href="https://knecht.works/styleguide/favicon/site.webmanifest" />
+    <meta name="robots" content="noindex,follow" />
+    <css-placeholder token="{{ placeholder_token }}">
+    <js-placeholder token="{{ placeholder_token }}">
+  </head>
+  <body{{ attributes.addClass('kit-body', 'kit-light') }}>
+    {{ page_top }}
+    {{ page }}
+    {{ page_bottom }}
+    <js-bottom-placeholder token="{{ placeholder_token }}">
+  </body>
+</html>
