@@ -1,0 +1,10 @@
+/* Bundled by Vite. Kept tiny on purpose: it only styles the row that the JS
+   entry flips, so a missing stylesheet is as visible as a missing script. */
+[data-vite-status='pending'] {
+  color: #9a9a9a;
+}
+
+[data-vite-status='loaded'] {
+  color: #16a34a;
+  font-weight: 600;
+}

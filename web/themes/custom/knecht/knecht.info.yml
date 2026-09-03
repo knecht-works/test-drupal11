@@ -5,6 +5,7 @@ package: Custom
 core_version_requirement: ^11
 base theme: false
 libraries:
+  - knecht/app
   - knecht/kit
 regions:
   content: Content

@@ -1,7 +1,12 @@
 {
     "name": "test-drupal11",
     "private": true,
+    "type": "module",
     "scripts": {
-        "build": "echo build ok"
+        "dev": "vite",
+        "build": "vite build"
+    },
+    "devDependencies": {
+        "vite": "^8.2.0"
     }
 }

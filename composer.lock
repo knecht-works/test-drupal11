@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8adf4de5b123fb3036c1d0e1450f6194",
+    "content-hash": "d57a9715f9d2d7f102a74d2b07a1aee3",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1313,6 +1313,53 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Core and its dependencies with known-compatible minor versions. Require this project INSTEAD OF drupal/core."
+        },
+        {
+            "name": "drupal/vite",
+            "version": "1.5.5",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/vite.git",
+                "reference": "1.5.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/vite-1.5.5.zip",
+                "reference": "1.5.5",
+                "shasum": "7114dabebbc5ccb2d578f937f981a239e2f4446a"
+            },
+            "require": {
+                "drupal/core": "^10.3 || ^11"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.5.5",
+                    "datestamp": "1785096956",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "wotnak",
+                    "homepage": "https://www.drupal.org/u/wotnak",
+                    "email": "wotnak@pm.me",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Vite integration for Drupal asset libraries.",
+            "homepage": "https://drupal.org/project/vite",
+            "support": {
+                "source": "https://git.drupalcode.org/project/vite",
+                "issues": "https://drupal.org/project/issues/vite"
+            }
         },
         {
             "name": "drush/drush",

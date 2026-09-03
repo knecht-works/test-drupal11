@@ -14,7 +14,7 @@
 
 </div>
 
-A [DDEV](https://ddev.com)-based Drupal 11 project used as an end-to-end test fixture for [Knecht](https://knecht.works). It runs the `standard` install profile against the DDEV MySQL database with a tiny custom theme (`web/themes/custom/knecht`) that renders a demo front page built with the Knecht Styleguide Kit, so Knecht can boot the environment, hit the site, and assert against real CMS behavior (rendered pages, the database-backed admin login, Drush).
+A [DDEV](https://ddev.com)-based Drupal 11 project used as an end-to-end test fixture for [Knecht](https://knecht.works). It runs the `standard` install profile against the DDEV MySQL database with a tiny custom theme (`web/themes/custom/knecht`) that renders a demo front page built with the Knecht Styleguide Kit, so Knecht can boot the environment, hit the site, and assert against real CMS behavior (rendered pages, the database-backed admin login, Drush). Front-end assets (`src/`) are bundled with [Vite](https://vitejs.dev) via the [drupal/vite](https://www.drupal.org/project/vite) module: the "Vite bundle" row on the front page flips from "not loaded" to "loaded" once the built script runs.
 
 ## Setup
 
@@ -25,6 +25,8 @@ ddev start                              # boot the containers
 ddev composer install                   # install Drupal core, Drush and contrib
 ddev import-db --file=seed/db.sql.gz    # load the pre-installed demo database
 ddev drush cr                           # rebuild caches
+ddev npm install
+ddev npm run build                        # build src/ into web/dist, or `ddev npm run dev` for the Vite dev server
 ```
 
 The seed dump in `seed/db.sql.gz` is a plain `standard` profile install with the `knecht` theme set as default and no uploaded files, so nothing outside the repo is needed. To recreate it from scratch instead of importing:

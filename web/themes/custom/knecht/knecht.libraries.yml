@@ -5,3 +5,16 @@ kit:
       https://knecht.works/styleguide/kit.css: { type: external, minified: true }
   js:
     https://knecht.works/styleguide/kit.js: { type: external, minified: true, attributes: { defer: true } }
+app:
+  # Resolved by the drupal/vite module: the source paths below are looked up
+  # in web/dist/.vite/manifest.json (vite.config.js at the repo root).
+  vite:
+    enabled: true
+    viteRoot: '/..'
+    distDir: 'web/dist'
+    baseUrl: '/dist'
+  css:
+    theme:
+      ../../../../src/css/app.css: {}
+  js:
+    ../../../../src/js/app.js: {}
